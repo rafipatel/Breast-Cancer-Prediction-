@@ -3,7 +3,7 @@ from flask import Flask, request, render_template
 import pickle
 import pandas as pd
 import numpy as np
-#from sklearn.preprocessing import StandardScaler
+
 
 #Creating a flask app
 app = Flask(__name__)
@@ -35,11 +35,10 @@ def predict():
        'symmetry_worst', 'fractal_dimension_worst']
     #Creating a dataframe with the input feature values and respective feature names.   
     df = pd.DataFrame(features_values, columns=features_names)
-    #sc=StandardScaler()
-    #df=sc.fit_transform(df)
+    
     #Prediction of given input stored in output variable.
     output = model.predict(df)
-    #Since Malignant is signified by 0 and Benign is signified by 1 in the dataset
+    
     # We are checking the int output and storing the result as benign or malignant as a string to display on the page.    
     if output == [1]:
         return render_template('benign.html')
