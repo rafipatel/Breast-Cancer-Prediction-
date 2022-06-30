@@ -10,3 +10,4 @@ Required files for any heroku deployment:-
 2. Procfile
 3. Requirements text file
 4. Dataset file
+5.Pickel file
